@@ -21,11 +21,21 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Users</h1>
     <a href="register.php">Add New User</a>
     <div class="user-container">
-    <?php foreach ($users as $user): ?>
+
+        <?php if (!empty($users)): ?>
+     <?php foreach($users as $user): ?> 
+
         <div clas="user-card">
-            <!-- <img src="<?php $users['profile_image'] ?>" alt="User Image"> -->
-             <h2> <?php $users['name'] ?> </h2>
-        </div>
+             <img src="<?php $user['profile_image'] ?>" alt="User Image">
+              <h2><?= htmlspecialchars($user['name']) ?> </h2> 
+        </div> 
+        
+
+        <?php endforeach; ?>
+        <?php else: ?>
+        <p> No users found </p>
+        <?php endif; ?>
+        
     </div>
 </body>
-</html>
+</html> 

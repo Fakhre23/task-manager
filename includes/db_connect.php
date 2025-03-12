@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "db name ";
+$dbname = "";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=task_manager" , $username , $password);
@@ -14,7 +14,7 @@ try {
     echo "Connection failed: " . $th->getMessage();
 }
 
-$conn = null;
+/* $conn = null; */
 
 ?>
 
