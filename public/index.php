@@ -21,11 +21,11 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Users</h1>
 
     <div class="user-container">
-        
+
     <?php foreach ($users as $user):?>
         <a href="tasks.php?user_id=<?= $user['id'] ?>" class="user-card">
         <div class="user-card">
-            <img src="<?= htmlspecialchars($user['profile_image']) ?> "alt="User Image">
+            <img src="<?= htmlspecialchars($user['profile_image']) ?>" alt="User Image">
             <h2><?= htmlspecialchars($user['name']) ?></h2>
         </div>
     <?php endforeach; ?>
