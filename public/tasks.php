@@ -20,7 +20,7 @@ if(isset($_GET['user_id'])) {
 
 }
 
-var_dump($user_id)
+var_dump('the user id is ', $user_id)
 
 
 
@@ -33,6 +33,7 @@ var_dump($user_id)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css";>
 </head>
 <body>
 
@@ -43,7 +44,7 @@ var_dump($user_id)
 
 <form action="../includes/add_task.php" method="POST">
     <input type="hidden" name="user_id" value="<?= $user_id ?>" >
-    <input type="text" name="title" placeholder="title of the task" requierd>
+    <input type="text" name="title" placeholder="title of the task" required>
     <button type="submit"> Add Task </button>
     </form>
 
@@ -51,15 +52,16 @@ var_dump($user_id)
 <!--*************** show all tasks for the user *************** -->
 
 <h2>Tasks List</h2>
-    <ul>
+    <ul id="tasklist">
     <?php foreach ($tasks as $task): ?>
-    <li> <?= htmlspecialchars($task['title'])?> </li>
-    <li> <?= htmlspecialchars($task['created_at'])?> </li>
-    <li> <?= htmlspecialchars($task['status'])?> </li>
+        <li class="task_item"  data-task-id="<?= $task['id']?>">
+            <span class="task-title"><?= htmlspecialchars($task['title'])?> </span>
+            <button class="done-btn">✔ Done</button>
+        </li>
     <?php endforeach; ?>
 </ul>
     
 <a href="./index.php">Back to Users</a> 
-
+<script src="js/tasks.js"></script>
 </body>
 </html>

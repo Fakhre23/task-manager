@@ -49,12 +49,13 @@ if(in_array($fileType,$allowedTypes)){                                          
 </head>
 <body>
   <h1>this is register page</h1> 
-  <a href="index.php">Back</a>
+  
   <form action="register.php" method="POST" enctype="multipart/form-data" >
     <input type="text" name="name" placeholder="Enter Name" required>
     <input type="file" name="profile-image" accept="images/*" required>
     <button type="submit">Register</button>
 
   </form>
+  <a href="index.php">Back</a>
 </body>
 </html>
