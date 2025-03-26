@@ -2,6 +2,7 @@
 
 include '../includes/db_connect.php';
 
+/* echo $_SERVER['REQUEST_METHOD']; */
 
 if ($_SERVER["REQUEST_METHOD"] =='POST'){
   $name = $_POST['name'];
@@ -9,14 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] =='POST'){
 
      /* *****  get user image from uploads->Dir  ******/
 
-$targetDir = "uploads/";
-$fileNme = basename($_FILES["profile-image"]["name"]);
-$targetFilePath = $targetDir . $fileNme;
-$fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+$targetDir = "uploads/";                 
+$fileNme = basename($_FILES["profile-image"]["name"]);                                    // omar.jpg
+$targetFilePath = $targetDir . $fileNme;                                                  // uploads/omar.jpg 
+$fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));                   //jpg
 $allowedTypes = ['jpg' , 'jpeg' , 'png'];
 
-if(in_array($fileType,$allowedTypes)){               // Checking if the File Type is Allowed
-  if(move_uploaded_file($_FILES["profile-image"]["tmp_name"], $targetFilePath)){
+if(in_array($fileType,$allowedTypes)){                                                  // Checking if the File Type is Allowed
+  if(move_uploaded_file($_FILES["profile-image"]["tmp_name"], $targetFilePath)){       // Checking if the Files in uploads/ 
 
     $stmt = $conn->prepare("INSERT INTO users (name , profile_image) VALUES (? , ?);");
     $stmt->execute([$name , $targetFilePath]);
@@ -30,14 +31,12 @@ if(in_array($fileType,$allowedTypes)){               // Checking if the File Typ
 }   
 }
 
+/* var_dump($fileNme); */
+
 
 
 
 ?>
-
-
-
-
 
 
 <!DOCTYPE html>

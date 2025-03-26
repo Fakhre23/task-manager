@@ -14,11 +14,12 @@ body {
 
 
 
-h1 {
+h1 , h2  {
     color: #333;
     margin-bottom: 20px;
     font-weight: 1000;
-    outline: 
+    text-decoration: none;
+    
 }
 
 .user-container {
