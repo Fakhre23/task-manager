@@ -20,7 +20,7 @@ if(isset($_GET['user_id'])) {
 
 }
 
-var_dump('the user id is ', $user_id)
+/* var_dump('the user id is ', $user_id) */
 
 
 
@@ -52,16 +52,24 @@ var_dump('the user id is ', $user_id)
 <!--*************** show all tasks for the user *************** -->
 
 <h2>Tasks List</h2>
+
     <ul id="tasklist">
     <?php foreach ($tasks as $task): ?>
-        <li class="task_item"  data-task-id="<?= $task['id']?>">
+
+        <li>
             <span class="task-title"><?= htmlspecialchars($task['title'])?> </span>
-            <button class="done-btn">✔ Done</button>
+            <form action="../includes/delete_task.php" method="POST" style="display:inline">
+                <input type="hidden" name="user_id" value="<?= $user_id ?>" >
+                <input type="hidden" name="task_id" value="<?= $task['id'] ?>">
+                <button type="submit" class="done-btn">✔ Done</button>
+            </form> 
         </li>
+        
     <?php endforeach; ?>
 </ul>
     
 <a href="./index.php">Back to Users</a> 
 <script src="js/tasks.js"></script>
+
 </body>
 </html>

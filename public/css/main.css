@@ -1,27 +1,26 @@
-
-
+/* General Page Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f1eeee;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 80vh; 
-    flex-direction: column;
+    margin: auto;
+    padding: 50px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+   /*  flex-direction: column; */
 }
 
-
-
-h1 , h2  {
+/* Headings */
+h1, h2 {
     color: #333;
     margin-bottom: 20px;
     font-weight: 1000;
-    text-decoration: none;
-    
+    text-align: center;
 }
 
+/* User Container */
 .user-container {
     display: flex;
     flex-wrap: wrap;
@@ -58,4 +57,103 @@ h1 , h2  {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-bottom: 2p
+    border-bottom: 2px solid #ddd;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Task List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    padding: 21px;
+    margin: 8px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Stack title and button */
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* Task Title */
+.task-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px; /* Space between title and button */
+}
+
+/* Done Button */
+.done-btn {
+    background: green;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100px; 
+    text-align: center;
+    margin: auto; 
+    display: block ;
+}
+
+.done-btn:hover {
+    background: darkgreen;
+}
+
+/* Completed Task */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    li {
+        width: 90%;
+    }
+
+    form {
+        max-width: 90%;
+    }
+}
