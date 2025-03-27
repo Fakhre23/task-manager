@@ -1,4 +1,4 @@
-/* General Page Styling */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f1eeee;
@@ -12,7 +12,7 @@ body {
    /*  flex-direction: column; */
 }
 
-/* Headings */
+
 h1, h2 {
     color: #333;
     margin-bottom: 20px;
@@ -20,7 +20,7 @@ h1, h2 {
     text-align: center;
 }
 
-/* User Container */
+
 .user-container {
     display: flex;
     flex-wrap: wrap;
@@ -29,7 +29,7 @@ h1, h2 {
     padding: 40px;
 }
 
-/* User Card */
+
 .user-card {
     background: white;
     border-radius: 10px;
@@ -52,7 +52,7 @@ h1, h2 {
     padding: 10px;
 }
 
-/* User Image */
+
 .user-card img {
     width: 100%;
     height: 180px;
@@ -60,7 +60,7 @@ h1, h2 {
     border-bottom: 2px solid #ddd;
 }
 
-/* Forms */
+
 form {
     display: flex;
     flex-direction: column;
@@ -96,7 +96,7 @@ button:hover {
     background: #0056b3;
 }
 
-/* Task List Styling */
+
 ul {
     list-style: none;
     padding: 0;
@@ -108,20 +108,20 @@ li {
     margin: 8px 0;
     border-radius: 5px;
     display: flex;
-    flex-direction: column; /* Stack title and button */
+    flex-direction: column; 
     align-items: center;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     width: 300px;
 }
 
-/* Task Title */
+
 .task-title {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 8px; /* Space between title and button */
+    margin-bottom: 8px; 
 }
 
-/* Done Button */
+
 .done-btn {
     background: green;
     color: white;
@@ -140,14 +140,14 @@ li {
     background: darkgreen;
 }
 
-/* Completed Task */
+
 .completed {
     text-decoration: line-through;
     opacity: 0.5;
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
     li {
         width: 90%;
